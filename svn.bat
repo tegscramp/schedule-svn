@@ -1,4 +1,3 @@
-
 ::	Создаем .bat файл с командами для заливки и удаления текущего проекта.
 ::	Как использовать .bat файл?
 ::	1. Положить батник в корень проекта и раскоментировать одну из строк содержащею path:"%~dp0
@@ -12,11 +11,12 @@
 :: TortoiseProc /command:update /path:"%~dp0"
 :: TortoiseProc /command:commit /path:"%~dp0"
 
+:: chcp 65001
 @echo off
-echo 1 - update
-echo 2 - commit
-echo 3 - quit
-set /p var=var:
+echo 1 - Update folder
+echo 2 - Commit repositories
+echo 3 - Quit
+set /p var=Option:
 if "%var%"=="1" (TortoiseProc /command:update /path:"%~dp0")
 exit
 if "%var%"=="2" (TortoiseProc /command:commit /path:"%~dp0")
